@@ -7,14 +7,15 @@
     
 <?php
    
-    $Usuario = $_POST['usuario'];
-    $Contra = $_POST['contra'];
+    $Usuario = $_POST['txtusuario'];
+    $Contra = $_POST['txtcontra'];
 if( ($Usuario == "joel" && $Contra == "joel")){
 	session_start();
-	$_SESSION["codigo"] = $Codigo;
+	$_SESSION["usuario"] = $Usuario;
 	header("Location: inicio.php");
       }else{
 	header("Location: principal.php");
+  echo "INCORRECTO";
 	}
 ?>
  
