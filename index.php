@@ -96,15 +96,22 @@ if(!isset($_SESSION['usuario'])){
 				<!-- wrapper-header -->
 				<div class="wrapper">
 					<a href="index.html"><img id="logo" src="images/dummylogo.png" alt="Nova" /></a>
-					<br/>
+					<img id="logo1" src="images/logo1.png">
 					<br/>
 		
 					<?php
   echo "<form id='head' method='post' action='cerrarsesion.php'>
-     <label id='lblusu'>Bienvenido  ".$_SESSION['usuario']."</label>
+     <label id='lblusu'>Bienvenido  ".$_SESSION['usuario']."</label><br/>
      <input type='submit' id='cerrarsesion' name='cerrarsesion' value='CERRAR SESI&Oacute;N' size='50'>
      </form>";
-     ?>
+     ?><div class="top-search">
+						<form  method="get" id="searchform" action="#">
+							<div>
+								<input type="text" value="Search..." name="s" id="s" onfocus="defaultInput(this)" onblur="clearInput(this)" />
+								<input type="submit" id="searchsubmit" value=" " />
+							</div>
+						</form>
+					</div>
 					<!-- search -->
 				
 					<!-- ENDS search -->
@@ -125,12 +132,14 @@ if(!isset($_SESSION['usuario'])){
 					<div class="wrapper">
 						<!-- Navigation -->
 						<ul id="nav" class="sf-menu">
-							<li class="current-menu-item"><a href="index.html">¿Quiénes somos?<span class="subheader">Bienvenido</span></a></li>
-							<li><a href="index.html">Propósito<span class="subheader">Misión y Visión</span></a>
+							<li class="current-menu-item"><a href="index.php">Inicio<span class="subheader">Bienvenido</span></a>
+							
+								</li>
+							<li><a href="index.html">Alumnos<span class="subheader">votantes</span></a>
 								<ul>
 									
-									<li><a href="mision.html"><span>Misión</span></a></li>
-									<li><a href="vision.html"><span> Visión</span></a></li>
+									<li><a href="porvotar.php"><span>Por Votar</span></a></li>
+									<li><a href="votaron.php"><span>Votaron</span></a></li>
 									
 								</ul>
 							</li>
@@ -173,7 +182,9 @@ if(!isset($_SESSION['usuario'])){
 			<div id="slider-block">
 				<div id="slider-holder">
 					<div id="slider">
-						<a href="contact.html"><img src="images/neon.jpg" title="¡Anuncios Luminosos Desde 1971!" alt="" /></a>
+						<a href="contact.html"><img src="images/cutonala1.png" title="¡Visita la página del Centro Universitario de Tonalá!" alt="" /></a>
+						
+						<a href="contact.html"><img id="eedinicio" src="images/EEDlogo1.jpg" title="Elección Electoral Democrática" alt="" /></a>
 						
 					</div>
 				</div>
