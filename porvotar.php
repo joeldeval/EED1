@@ -1,8 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario'])){
+	header("Location: principal.php");
+}
+?>
 <!DOCTYPE  html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>NEON | Blog</title>
+		<title>EED | Alumnos Por Votar</title>
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -83,20 +89,31 @@
 
 	</head>
 	
-	<body class="home">
+	<body>
 
 			<!-- HEADER -->
-			<div id="header">
+		<div id="header">
 				<!-- wrapper-header -->
 				<div class="wrapper">
-						<a href="index.html"><img id="logo" src="images/neon.png" alt="Nova" /></a>
+					<a href="index.html"><img id="logo" src="images/dummylogo.png" alt="Nova" /></a>
+					<img id="logo1" src="images/logo1.png">
 					<br/>
-					<br/>
-					<br/>
-					<br/>
-               <p id="desde">desde 1971</p>
+		
+					<?php
+  echo "<form id='head' method='post' action='cerrarsesion.php'>
+     <label id='lblusu'> Bienvenido ".$_SESSION['usuario']."</label><br/>
+     <input type='submit' id='cerrarsesion' name='cerrarsesion' value='CERRAR SESI&Oacute;N' size='50'>
+     </form>";
+     ?><div class="top-search">
+						<form  method="get" id="searchform" action="#">
+							<div>
+								<input type="text" value="Search..." name="s" id="s" onfocus="defaultInput(this)" onblur="clearInput(this)" />
+								<input type="submit" id="searchsubmit" value=" " />
+							</div>
+						</form>
+					</div>
 					<!-- search -->
-					
+				
 					<!-- ENDS search -->
 				</div>
 				<!-- ENDS wrapper-header -->					
@@ -115,16 +132,18 @@
 					<div class="wrapper">
 						<!-- Navigation -->
 						<ul id="nav" class="sf-menu">
-							<li><a href="index.html">Inicio<span class="subheader">Bienvenido</span></a></li>
-							<li><a href="index.html">Propósito<span class="subheader">Misión y Visión</span></a>
+							<li><a href="index.php">Inicio<span class="subheader">Bienvenido</span></a>
+							
+								</li>
+							<li class="current-menu-item"><a href="alumnos.php">Alumnos<span class="subheader">votantes</span></a>
 								<ul>
 									
-									<li><a href="mision.html"><span>Misión</span></a></li>
-									<li><a href="vision.html"><span> Visión</span></a></li>
+									<li><a href="porvotar.php"><span>Por Votar</span></a></li>
+									<li><a href="votaron.php"><span>Votaron</span></a></li>
 									
 								</ul>
 							</li>
-							<li class="current-menu-item"><a href="blog.html">Blog<span class="subheader">Visita Nuestro Blog</span></a>
+							<li><a href="totaldevotos.php">Votos<span class="subheader">Total</span></a>
 							</li>
 							<li><a href="gallery.html">Galería<span class="subheader">Imágenes</span></a>
 							</li>
@@ -145,36 +164,55 @@
 				
 				<!-- ENDS wrapper-bottom -->
 			</div>
-
-						
-				
 						<!-- Navigation -->
 					</div>
 					<!-- wrapper-menu -->
 				</div>
 				<!-- ENDS menu-holder -->
-
 			</div>
 			<!-- ENDS Menu -->
 			
 			
 			
 
-			<!-- Slider -->
-			<div id="slider-block">
-				<div id="slider-holder">
-					<div id="slider">
-						<a href="http://anunciosluminosostorres.blogspot.mx/"><img src="images/visitanuestroblog.png" title="Haz Click aquí y comenta en Nuestro Blog!" alt="" /></a>
-						
-					</div>
-				</div>
-			</div>
-			<!-- ENDS Slider -->
 			
 			<!-- MAIN -->
 			<div id="main">
 				<!-- wrapper-main -->
-			
+				<div class="wrapper">
+					
+					
+					<!-- content -->
+					<div id="content">
+						
+					<!-- title -->
+					<div id="page-title">
+						<span class="title">Misi&oacute;n</span>
+					</div>
+					<!-- ENDS title -->
+
+					<!-- page-content -->
+					<div id="page-content">
+											
+						<!-- 2 cols -->
+						<div class="one-half">
+							<h6 class="line-divider">Nuestra misi&oacute;n </h6>
+							<p>Brindar siempre lo mejor en nuestro servicio y productos bas&aacute;ndonos en la calidad y creatividad hasta el m&aacute;s
+m&iacute;nimo detalle para lograr as&iacute;, la satisfacci&oacute;n total de nuestros clientes. </p>
+						</div>
+						
+						</div>
+						<div class="clear "></div>
+						<!-- ENDS 1/4 cols -->
+	
+					</div>
+					<!-- ENDS page-content -->
+		
+					</div>
+					<!-- ENDS content -->
+				</div>
+				<!-- ENDS wrapper-main -->
+			</div>
 			<!-- ENDS MAIN -->
 			
 			<!-- Twitter -->
@@ -191,39 +229,11 @@
 			<!-- ENDS Twitter -->
 
 			
-			<!-- FOOTER -->
-			<div id="footer">
-				<!-- wrapper-footer -->
-				<div class="wrapper">
-					<!-- footer-cols -->
-					<ul id="footer-cols">
-						<li class="col">
-							<h6>Páginas</h6>
-							<ul>
-								<li class="page_item"><a href="index.html">¿Quiénes somos?</a></li>
-											
-							    <li class="page_item"><a href="vision.html">Propósito</a></li>
-								<li class="page_item"><a href="blog.html">Blog</a></li>
-								<li class="page_item"><a href="gallery.html">Galería</a></li>
-								<li class="page_item"><a href="contact.html">Contacto</a></li>
-
-							</ul>
-				
-						</li>
-						
-					
-						
-						
-					</ul>
-					<!-- ENDS footer-cols -->
-				</div>
-				<!-- ENDS wrapper-footer -->
-			</div>
-			<!-- ENDS FOOTER -->
+			
 		
 		
 			<!-- Bottom -->
-			<div id="bottom">
+				<div id="bottom">
 				<!-- wrapper-bottom -->
 				<div class="wrapper">
 					<div id="bottom-text">NEON 2013 --- Todos los derechos reservados --- </div>
@@ -241,4 +251,3 @@
 	
 	</body>
 </html>
-
