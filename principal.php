@@ -3,7 +3,7 @@
 <head>
 <link rel="shortcut icon" href="favicon2.png" />
 	<title>EED</title>
-
+<meta charset="utf-8">
 	 <link rel="stylesheet" href="styleprincipal.css">
 
 </head>
@@ -31,7 +31,11 @@
         <fieldset id="central">
        
       
+<<<<<<< HEAD
    <img src="images/EEDlogo1.png" id="logoeed">
+=======
+   <img src="EEDlogo1.png" id="logoeed">
+>>>>>>> 25487a230d6a60d934f3af47924b6f21c67271d0
 	</fieldset>
 </body>
 </html>

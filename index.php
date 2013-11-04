@@ -8,7 +8,7 @@ if(!isset($_SESSION['usuario'])){
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>NEON Anuncios Luminosos</title>
+		<title>EED CUTonala</title>
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -175,10 +175,56 @@ if(!isset($_SESSION['usuario'])){
 			</div>
 			<!-- ENDS Menu -->
 			
-			
-			
+			<div id= "tabla">
+              <table border="1" cellspacing=1 cellpadding=2 style="font-size: 8pt"><tr>
+<td><font face="verdana"><b>CODIGO</b></font></td>
+<td><font face="verdana"><b>NOMBRE</b></font></td>
+<td><font face="verdana"><b>APELLIDOP</b></font></td>
+<td><font face="verdana"><b>APELLIDOM</b></font></td>
+<td><font face="verdana"><b>VOTO</b></font></td>
+<td><font face="verdana"><b>MESA</b></font></td>
+</tr>
+                <?php  
+		include ("conexion.php");
+  $link = @mysql_connect("localhost", "root","")
+      or die ("Error al conectar a la base de datos.");
+  @mysql_select_db("cutonala", $link)
+      or die ("Error al conectar a la base de datos.");
 
-			<!-- Slider -->
+  $query ="SELECT Nombre,Codigo,Ap_Paterno,Ap_Materno,voto " .
+      "FROM estudiante, urnas where urnas.id_Estudiante=estudiante.id ";
+  $result1 = mysql_query($query) or die (mysql_error()); ;
+  $numero = 0;
+  while($row = mysql_fetch_array($result1))
+  {
+    echo "<tr><td width=\"25%\"><font face=\"verdana\">" .        $row["Codigo"] . "</font></td>";
+    echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	    $row["Nombre"] . "</font></td>";
+	echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["Ap_Paterno"] . "</font></td>";
+    echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["Ap_Materno"] . "</font></td>";
+                  
+       
+
+    $numero++;
+  }
+  echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Numero registros: " . $numero . 
+      "</b></font></td></tr>";
+  
+  mysql_free_result($result1);
+  mysql_close($link);
+?>
+              </p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+			</div>
+			</table>
+
+	<!-- Slider -->
 			<div id="slider-block">
 				<div id="slider-holder">
 					<div id="slider">
