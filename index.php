@@ -145,8 +145,70 @@ if(!isset($_SESSION['usuario'])){
 							</li>
 							<li><a href="totaldevotos.php">Votos<span class="subheader">Total</span></a>
 							</li>
-							
+                            
+                            
+                            	<!-- sedes -->
+                            <li><a href="alumnos.php">Sede<span class="subheader">Alterna</span></a>
+								<ul>
+									
+									<li><a href="porvotar.php"><span>Casa Cultura I</span></a></li>
+									<li><a href="votaron.php"><span>Casa Cultura II</span></a></li>
+                                    <li><a href="votaron.php"><span>Sillitas</span></a></li>
+                                    <li><a href="votaron.php"><span>Santa Paula</span></a></li>
+									
+								</ul>
+							</li>
+                            
+                            
+                           	<!-- carreras --> 
+                            
+							<li><a href="alumnos.php">Carrera<span class="subheader">Licenciatura</span></a>
+								<ul>
+									
+									<li><a href="porvotar.php"><span>Lic. Salud Publica</span></a></li>
+									<li><a href="votaron.php"><span>Lic. Medico cirujano y partero</span></a></li>
+                                    <li><a href="votaron.php"><span>Ing. Nanotecnologia</span></a></li>
+                                     <li><a href="votaron.php"><span>Ing. Energia</span></a></li>
+                                     <li><a href="votaron.php"><span>Ing. Ciencias Computacionales</span></a></li>
+                                    <li><a href="votaron.php"><span>Lic. Gerontologia</span></a></li>
+                                     <li><a href="votaron.php"><span>Lic. Estudios Liberales</span></a></li>
+                                      <li><a href="votaron.php"><span>Lic. Diseño de Artesanias</span></a></li>
+                                       <li><a href="votaron.php"><span>Lic. Contaduria Publica</span></a></li>
+                                        <li><a href="votaron.php"><span>Lic. Administracion de Negocios</span></a></li>
+                                         <li><a href="votaron.php"><span>Lic. Abogado</span></a></li>
+                                          <li><a href="votaron.php"><span>Lic. Gerontologia</span></a></li>
+									
+								</ul>
+							</li>
 
+ 	<!-- Grado y grupo --> 
+
+<li><a href="alumnos.php">Grado y Grupo<span class="subheader">Aulas</span></a>
+								<ul>
+									
+									<li><a href="porvotar.php"><span>1ero A</span></a></li>
+									<li><a href="votaron.php"><span>1ero B</span></a></li>
+                                    <li><a href="votaron.php"><span>2do A</span></a></li>
+                                    <li><a href="votaron.php"><span>2do B</span></a></li>
+                                     <li><a href="votaron.php"><span>3ero A</span></a></li>
+                                      <li><a href="votaron.php"><span>3ero B</span></a></li>
+                                       <li><a href="votaron.php"><span>4to A</span></a></li>
+                                        <li><a href="votaron.php"><span>4to B</span></a></li>
+									
+								</ul>
+							</li>
+                            
+                            
+                           <li><a href="alumnos.php">Turno<span class="subheader">Matutino Vespertino</span></a>
+								<ul>
+									
+									<li><a href="porvotar.php"><span>Matutino</span></a></li>
+									<li><a href="votaron.php"><span>Vespertino</span></a></li>
+									
+								</ul>
+							</li> 
+                            
+                            
 						</ul>
 
 							<div id="bottom">
@@ -171,7 +233,73 @@ if(!isset($_SESSION['usuario'])){
 
 			</div>
 			<!-- ENDS Menu -->
-			
+			<div id= "tabla">
+              <table border="1" cellspacing=1 cellpadding=2 style="font-size: 8pt"><tr>
+<td><font face="verdana"><b>CODIGO</b></font></td>
+<td><font face="verdana"><b>NOMBRE</b></font></td>
+<td><font face="verdana"><b>APELLIDOP</b></font></td>
+<td><font face="verdana"><b>APELLIDOM</b></font></td>
+<td><font face="verdana"><b>VOTO</b></font></td>
+<td><font face="verdana"><b>MESA</b></font></td>
+</tr>
+                <?php  
+		include ("conexion.php");
+  $link = @mysql_connect("localhost", "root","")
+      or die ("Error al conectar a la base de datos.");
+  @mysql_select_db("cutonala", $link)
+      or die ("Error al conectar a la base de datos.");
+
+  $query ="SELECT Nombre,Codigo,Ap_Paterno,Ap_Materno,voto " .
+      "FROM estudiante, urnas where urnas.id_Estudiante=estudiante.id ";
+	 
+  $result1 = mysql_query($query) or die (mysql_error());
+  
+  //consulta alumnos que NO votaron 
+  $result2 = mysql_query("select count(voto) from urnas where voto=0") or die (mysql_error()); 
+  $numero = 0;
+  $sinvotar = mysql_fetch_row($result2);
+   echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Nu Alumnos sin votar: " . $sinvotar[0] . 
+      "</b></font></td></tr>";
+	  
+	  //consulta alumnos que votaron 
+  $result3 = mysql_query("select count(voto) from urnas where voto=1") or die (mysql_error()); 
+  $votar = mysql_fetch_row($result3);
+   echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Nu Alumnos votaron: " . $votar[0] . 
+      "</b></font></td></tr>";
+	  
+	  
+  while($row = mysql_fetch_array($result1))
+  {
+    echo "<tr><td width=\"25%\"><font face=\"verdana\">" .        $row["Codigo"] . "</font></td>";
+    echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	    $row["Nombre"] . "</font></td>";
+	echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["Ap_Paterno"] . "</font></td>";
+    echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["Ap_Materno"] . "</font></td>";
+    echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["voto"] . "</font></td>";
+       
+
+    $numero++;
+  }
+  echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Numero registros: " . $numero . 
+      "</b></font></td></tr>";
+	  
+	 
+  
+  mysql_free_result($result1);
+  mysql_free_result($result2);
+  mysql_free_result($result3);
+  mysql_close($link);
+?>
+              </p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+			</div>
+			</table>
 			
 			
 
