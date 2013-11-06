@@ -187,18 +187,17 @@ if(!isset($_SESSION['usuario'])){
 						
 					<!-- title -->
 					<div id="page-title">
-						<span class="title">Misi&oacute;n</span>
+						<span class="title">Porvotar</span>
 					</div>
 					<!-- ENDS title -->
 
 					<!-- page-content -->
 					<div id="page-content">
 											
-						<!-- 2 cols -->
+						<!-- Aqui va el titulo y parrafo del contenido -->
 						<div class="one-half">
-							<h6 class="line-divider">Nuestra misi&oacute;n </h6>
-							<p>Brindar siempre lo mejor en nuestro servicio y productos bas&aacute;ndonos en la calidad y creatividad hasta el m&aacute;s
-m&iacute;nimo detalle para lograr as&iacute;, la satisfacci&oacute;n total de nuestros clientes. </p>
+							<h6 class="line-divider"></h6>
+							<p> </p>
 						</div>
 						
 						</div>
