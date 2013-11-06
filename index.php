@@ -250,7 +250,7 @@ if(!isset($_SESSION['usuario'])){
       or die ("Error al conectar a la base de datos.");
 
   $query ="SELECT Nombre,Codigo,Ap_Paterno,Ap_Materno,voto " .
-      "FROM estudiante, urnas where urnas.id_Estudiante=estudiante.id ";
+      "FROM estudiante, urnas";
 	 
   $result1 = mysql_query($query) or die (mysql_error());
   
