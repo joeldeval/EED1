@@ -7,8 +7,10 @@ if(!isset($_SESSION['usuario'])){
 <!DOCTYPE  html>
 <html>
 	<head>
+	<link rel="shortcut icon" href="favicon.png" />
 		<meta charset="utf-8">
 		<title>EED | Inicio</title>
+
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -95,7 +97,7 @@ if(!isset($_SESSION['usuario'])){
 			<div id="header">
 				<!-- wrapper-header -->
 				<div class="wrapper">
-					<a href="index.html"><img id="logo" src="images/dummylogo.png" alt="Nova" /></a>
+					<a href="http://www.cutonala.udg.mx"><img id="logo" src="images/dummylogo.png" alt="Nova" /></a>
 					<img id="logo1" src="images/logo1.png">
 					<br/>
 		
@@ -179,9 +181,9 @@ if(!isset($_SESSION['usuario'])){
 			<div id="slider-block">
 				<div id="slider-holder">
 					<div id="slider">
-						<a href="contact.html"><img src="images/cutonala1.png" title="¡Visita la página del Centro Universitario de Tonalá!" alt="" /></a>
+						<a href="http://www.cutonala.udg.mx"><img src="images/cutonala1.png" title="¡Visita la página del Centro Universitario de Tonalá!" alt="" /></a>
 						
-						<a href="contact.html"><img id="eedinicio" src="images/EEDlogo1.jpg" title="Elección Electoral Democrática" alt="" /></a>
+						<a href="index.php"><img id="eedinicio" src="images/EEDlogo1.jpg" title="Elección Electoral Democrática" alt="" /></a>
 						
 					</div>
 				</div>
@@ -216,7 +218,33 @@ if(!isset($_SESSION['usuario'])){
 				</div>
 			</div>
 			<!-- ENDS Twitter -->
+<div id="footer">
+				<!-- wrapper-footer -->
+				<div class="wrapper">
+					<!-- footer-cols -->
+					<ul id="footer-cols">
+						<li class="col">
+							<h6>Páginas</h6>
+							<ul>
+								<li class="page_item"><a href="index.html">¿Quiénes somos?</a></li>
+											
+							    <li class="page_item"><a href="mision.html">Propósito</a></li>
+								<li class="page_item"><a href="blog.html">Blog</a></li>
+								<li class="page_item"><a href="gallery.html">Galería</a></li>
+								<li class="page_item"><a href="contact.html">Contacto</a></li>
 
+							</ul>
+				
+						</li>
+						
+					
+						
+						
+					</ul>
+					<!-- ENDS footer-cols -->
+				</div>
+				<!-- ENDS wrapper-footer -->
+			</div>
 			
 			
 		
@@ -224,7 +252,7 @@ if(!isset($_SESSION['usuario'])){
 			<div id="bottom">
 				<!-- wrapper-bottom -->
 				<div class="wrapper">
-					<div id="bottom-text">NEON 2013 --- Todos los derechos reservados --- </div>
+					<div id="bottom-text">Universidad de Guadalajara © Derechos reservados ©1997-2012.</div>
 					<!-- Social -->
 					<ul class="social ">
 						<li><a href="http://www.facebook.com" class="poshytip  facebook" title="Become a fan"></a></li>
