@@ -151,7 +151,7 @@ if(!isset($_SESSION['usuario'])){
                             <li><a href="alumnos.php">Sede<span class="subheader">Alterna</span></a>
 								<ul>
 									
-									<li><a href="porvotar.php"><span>Casa Cultura I</span></a></li>
+									<li><a href="Sede_casaculturaI/Casa_cultura_I.php"><span>Casa Cultura I</span></a></li>
 									<li><a href="votaron.php"><span>Casa Cultura II</span></a></li>
                                     <li><a href="votaron.php"><span>Sillitas</span></a></li>
                                     <li><a href="votaron.php"><span>Santa Paula</span></a></li>
@@ -250,7 +250,7 @@ if(!isset($_SESSION['usuario'])){
       or die ("Error al conectar a la base de datos.");
 
   $query ="SELECT Nombre,Codigo,Ap_Paterno,Ap_Materno,voto " .
-      "FROM estudiante, urnas";
+      "FROM estudiante, urnas WHERE Estudiante.id=id_Estudiante";
 	 
   $result1 = mysql_query($query) or die (mysql_error());
   
