@@ -9,8 +9,12 @@ if(!isset($_SESSION['usuario'])){
 	<head>
 	<link rel="shortcut icon" href="favicon.png" />
 		<meta charset="utf-8">
+<<<<<<< HEAD
 		<title>EED | Inicio</title>
 
+=======
+		<title>EED CUTonala</title>
+>>>>>>> 4dbad3a54cfd805894b1b7fc2ed2a36ae22a705f
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -235,6 +239,10 @@ if(!isset($_SESSION['usuario'])){
 
 			</div>
 			<!-- ENDS Menu -->
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 4dbad3a54cfd805894b1b7fc2ed2a36ae22a705f
 			<div id= "tabla">
               <table border="1" cellspacing=1 cellpadding=2 style="font-size: 8pt"><tr>
 <td><font face="verdana"><b>CODIGO</b></font></td>
@@ -252,6 +260,7 @@ if(!isset($_SESSION['usuario'])){
       or die ("Error al conectar a la base de datos.");
 
   $query ="SELECT Nombre,Codigo,Ap_Paterno,Ap_Materno,voto " .
+<<<<<<< HEAD
       "FROM estudiante, urnas WHERE Estudiante.id=id_Estudiante";
 	 
   $result1 = mysql_query($query) or die (mysql_error());
@@ -270,6 +279,11 @@ if(!isset($_SESSION['usuario'])){
       "</b></font></td></tr>";
 	  
 	  
+=======
+      "FROM estudiante, urnas where urnas.id_Estudiante=estudiante.id ";
+  $result1 = mysql_query($query) or die (mysql_error()); ;
+  $numero = 0;
+>>>>>>> 4dbad3a54cfd805894b1b7fc2ed2a36ae22a705f
   while($row = mysql_fetch_array($result1))
   {
     echo "<tr><td width=\"25%\"><font face=\"verdana\">" .        $row["Codigo"] . "</font></td>";
@@ -277,19 +291,28 @@ if(!isset($_SESSION['usuario'])){
 	    $row["Nombre"] . "</font></td>";
 	echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["Ap_Paterno"] . "</font></td>";
     echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["Ap_Materno"] . "</font></td>";
+<<<<<<< HEAD
     echo "<td width=\"25%\"><font face=\"verdana\">" .        $row["voto"] . "</font></td>";
+=======
+                  
+>>>>>>> 4dbad3a54cfd805894b1b7fc2ed2a36ae22a705f
        
 
     $numero++;
   }
   echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Numero registros: " . $numero . 
       "</b></font></td></tr>";
+<<<<<<< HEAD
 	  
 	 
   
   mysql_free_result($result1);
   mysql_free_result($result2);
   mysql_free_result($result3);
+=======
+  
+  mysql_free_result($result1);
+>>>>>>> 4dbad3a54cfd805894b1b7fc2ed2a36ae22a705f
   mysql_close($link);
 ?>
               </p>
@@ -302,10 +325,13 @@ if(!isset($_SESSION['usuario'])){
               <p>&nbsp;</p>
 			</div>
 			</table>
+<<<<<<< HEAD
 			
 			
+=======
+>>>>>>> 4dbad3a54cfd805894b1b7fc2ed2a36ae22a705f
 
-			<!-- Slider -->
+	<!-- Slider -->
 			<div id="slider-block">
 				<div id="slider-holder">
 					<div id="slider">
