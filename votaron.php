@@ -7,6 +7,7 @@ if(!isset($_SESSION['usuario'])){
 <!DOCTYPE  html>
 <html>
 	<head>
+	<link rel="shortcut icon" href="favicon.png" />
 		<meta charset="utf-8">
 		<title>EED | Alumnos Que Han Votado</title>
 		
@@ -145,11 +146,7 @@ if(!isset($_SESSION['usuario'])){
 							</li>
 							<li><a href="totaldevotos.php">Votos<span class="subheader">Total</span></a>
 							</li>
-							<li><a href="gallery.html">Galería<span class="subheader">Imágenes</span></a>
-							</li>
-							<li><a href="contact.html">Contacto<span class="subheader">Acercate</span></a></li>
-
-
+					
 						</ul>
 
 						<div id="bottom">

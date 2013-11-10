@@ -3,11 +3,18 @@ session_start();
 if(!isset($_SESSION['usuario'])){
 	header("Location: principal.php");
 }
+
+
+require_once('contacto.php');
+require_once('listarContactos.php');
 ?>
+
+
 <!DOCTYPE  html>
 <html>
 	<head>
-		<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.png" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/> 
 		<title>EED | Alumnos Por Votar</title>
 		
 		<!-- CSS -->
@@ -183,7 +190,7 @@ if(!isset($_SESSION['usuario'])){
 						
 					<!-- title -->
 					<div id="page-title">
-						<span class="title">Misi&oacute;n</span>
+						<span class="title">ALUMNOS</span>
 					</div>
 					<!-- ENDS title -->
 
@@ -192,9 +199,17 @@ if(!isset($_SESSION['usuario'])){
 											
 						<!-- 2 cols -->
 						<div class="one-half">
-							<h6 class="line-divider">Nuestra misi&oacute;n </h6>
-							<p>Brindar siempre lo mejor en nuestro servicio y productos bas&aacute;ndonos en la calidad y creatividad hasta el m&aacute;s
-m&iacute;nimo detalle para lograr as&iacute;, la satisfacci&oacute;n total de nuestros clientes. </p>
+							<h6 class="line-divider">Todos Alumnos </h6>
+							<p>    <?php
+            $modelo = new Contacto();
+            $contactos = $modelo->encontrarTodos();
+            $listar = new ListarContactos();
+            $listar->contactos = $contactos;
+            $listar->generaTabla();
+          
+        ?>
+
+							</p>
 						</div>
 						
 						</div>

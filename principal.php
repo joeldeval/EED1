@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="shortcut icon" href="favicon2.png" />
+<link rel="shortcut icon" href="favicon.png" />
 	<title>EED</title>
 
 	 <link rel="stylesheet" href="styleprincipal.css">
