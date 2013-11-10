@@ -4,10 +4,10 @@ use database cutonala;
                               Nombre varchar(50) not null, Password varchar(50) not null );
 
         create table Sede(id int(10) not null Auto_increment primary key,
-                              NombreSede varchar(50) not null, Ubicacion varchar(150) not null);
+                              Nombre varchar(50) not null, Ubicacion varchar(150) not null);
 
         create table Licenciatura(id int(10) not null Auto_increment primary key,
-                                      NombreLicenciatura varchar(50) not null, id_sede int(10) not null,
+                                      Nombre varchar(50) not null, id_sede int(10) not null,
                                       FOREIGN KEY (id_sede) REFERENCES Sede(id)) ENGINE=INNODB;
 
         create table Grupo(id int(10) not null Auto_increment primary key, Nombre varchar(5) not null,
@@ -25,9 +25,9 @@ use database cutonala;
         create table Mesas(id_Licenciatura int(10) not null, Num_Mesa int(10) not null, FOREIGN KEY (id_Licenciatura) REFERENCES Licenciatura(id)) ENGINE=INNODB;
 
        
-insert into Sede(NombreSede,Ubicacion) 
+insert into Sede(Nombre,Ubicacion) 
         values('Casa de la Cultura','www.google.com'),('Casa de la Cultura II','www.google'), ('Sillitas', 'www.google.com'),('Santa Paula', 'www.google.com');
-insert into Licenciatura(NombreLicenciatura, id_sede)
+insert into Licenciatura(Nombre, id_sede)
         values('Lic. Salud Publica', '2'), ('Lic. Medico, Cirujano y Partero', '2'), ('Ing. Nanotecnologia', '1'),
               ('Ing. Energia', '1'), ('Ing. Ciencias Computacionales', '1'), ('Lic. Historia del Arte', '1'),
               ('Lic. Gerontologia', '2'), ('Lic. Estudios Liberales', '2'), ('Lic. Diseño de Artesanias', '4'),
